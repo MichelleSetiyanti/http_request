@@ -45,7 +45,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("HTTP PUT/PATCH"),
+        title: Text("HTTP POST"),
       ),
       body: ListView(
         padding: EdgeInsets.all(20),
@@ -76,10 +76,10 @@ class _HomePageState extends State<HomePage> {
           SizedBox(height: 10),
           ElevatedButton(
             onPressed: () async {
-              var response = await myhttp.patch(
-                  Uri.parse("https://reqres.in/api/users/2"),
+              var response = await myhttp.post(
+                  Uri.parse("https://reqres.in/api/users"),
                   body: {"name": nameC.text, "job": jobC.text});
-              // put sm patch sama aja
+
               Map<String, dynamic> data =
                   json.decode(response.body) as Map<String, dynamic>;
 
@@ -88,7 +88,7 @@ class _HomePageState extends State<HomePage> {
                 hasilResponseJob = "${data["job"]}";
               });
             },
-            child: Text("SUBMIT"),
+            child: Text("POST"),
             style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.all(20),
                 shape: RoundedRectangleBorder(
