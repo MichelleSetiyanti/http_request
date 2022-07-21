@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
   late String data;
   @override
   void initState() {
-    data = "Belum Ada data";
+    data = "Belum Ada dataa...";
     // TODO: implement initState
     super.initState();
   }
